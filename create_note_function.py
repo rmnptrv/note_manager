@@ -35,9 +35,8 @@ def create_note(notes):
     # Проверяем, чтобы статус заметки был по ключевым словам
     while True:
         status = input("Введите статус заметки (новая, в процессе, выполнено): ").lower()
-        while status not in ["новая", "в процессе", "выполнено"]:
+        if status not in ["новая", "в процессе", "выполнено"]:
             print("Пожалуйста, выберите статус заметки из предложенных вариантов! Новая, в процессе или выполнено.")
-            status = input("Введите статус заметки (новая, в процессе, выполнено): ").lower()
         else:
             break
 
@@ -56,8 +55,9 @@ def create_note(notes):
             print("Неверный формат даты! Пожалуйста, введи правильный формат даты, например 25.12.2024!")
 
     # Добавляем введеные значения в словарь
-
-    note = {'username': username,
+    note = {
+             'id': len(notes) + 1,
+             'username': username,
              'title': title,
              'content': content,
              'status': status,
@@ -67,10 +67,11 @@ def create_note(notes):
     # Добавляем созданный словарь в список заметок
     notes.append(note)
     # Возвращаем созданный словарь из функции
-    return note
+    return notes
 
 if __name__ == "__main__":
     notes = []
     notes = create_note(notes)
     print("\nЗаметка создана:")
-    print(notes)
+    for note in notes:
+        print(note)

@@ -1,10 +1,11 @@
 # Удаление заметок по критериям
-# Вывод текущего списка заметок
+# Вызываем функцию
 def delete_note(notes):
     if not notes:
         print("Список заметок пуст.")
         return notes
 
+    # Показывает текущие заметки
     print("Текущие заметки:")
     for note in notes:
         print(f"{note['id']}. Имя: {note['username']}")

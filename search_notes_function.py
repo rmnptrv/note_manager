@@ -55,7 +55,7 @@ if __name__ == "__main__":
     else:
         print("Заметки, соответствующие запросу, не найдены.")
 
-    # # Ввод и поиск по статусу
+    # Ввод и поиск по статусу
     status = input("Введите статус для поиска: ")
     found_notes = search_notes(notes, status=status)
     if found_notes:
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     else:
         print("Заметки, соответствующие запросу, не найдены.")
 
-    # # Ввод и поиск по ключевому слову и статусу
+    # Ввод и поиск по ключевому слову и статусу
     keyword = input("Введите ключевое слово для поиска: ")
     status = input("Введите статус для поиска: ")
     found_notes = search_notes(notes, keyword=keyword, status=status)
