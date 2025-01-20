@@ -2,14 +2,14 @@
 # Импортируем модуль из библиотеки, это поможет нам для работы с датами
 from datetime import datetime
 
-# Получаем текущую дату
-current_datetime = datetime.now()
-
-# Преобразовываем дату в нужный нам формат, исключая время
-formatted_datetime = current_datetime.strftime("%d.%m.%Y")
 
 # Вызываем функцию
-def create_note():
+def create_note(notes):
+    # Получаем текущую дату
+    current_datetime = datetime.now()
+    # Преобразовываем дату в нужный нам формат, исключая время
+    formatted_datetime = current_datetime.strftime("%d.%m.%Y")
+
     # Запускаем цикл ввода и проверки на пустое значение
     while True:
         username = input("Ваше имя: ")
@@ -56,6 +56,7 @@ def create_note():
             print("Неверный формат даты! Пожалуйста, введи правильный формат даты, например 25.12.2024!")
 
     # Добавляем введеные значения в словарь
+
     note = {'username': username,
              'title': title,
              'content': content,
@@ -63,10 +64,13 @@ def create_note():
              'created_date': created_date,
              'issue_date': issue_date}
 
+    # Добавляем созданный словарь в список заметок
+    notes.append(note)
     # Возвращаем созданный словарь из функции
     return note
 
-# Все результаты функции присваиваются в переменную new_note
-new_note = create_note()
-# Выводит словарь на консоль
-print("Заметка создана: ", new_note)
+if __name__ == "__main__":
+    notes = []
+    notes = create_note(notes)
+    print("\nЗаметка создана:")
+    print(notes)
