@@ -38,47 +38,48 @@ notes = [
     {'username': 'Алексей', 'title': 'Список покупок', 'content': 'Купить продукты на неделю', 'status': 'новая', 'created_date': '27-11-2024', 'issue_date': '30-11-2024'},
     {'username': 'Мария', 'title': 'Учеба', 'content': 'Подготовиться к экзамену', 'status': 'в процессе', 'created_date': '25-11-2024', 'issue_date': '01-12-2024'},
     {'username': 'Иван', 'title': 'План работы', 'content': 'Завершить проект', 'status': 'выполнено', 'created_date': '20-11-2024', 'issue_date': '26-11-2024'}
-]
+] if __name__ == "__main__" else []
 
 # Ввод и поиск по ключевому слову
-keyword = input("Введите ключевое слово для поиска: ")
-found_notes = search_notes(notes, keyword=keyword)
-if found_notes:
-    print("Найдены заметки:")
-    for i, note in enumerate(found_notes, start=1):
-        print(f"Заметка №{i}:")
-        print(f"Имя пользователя: {note['username']}")
-        print(f"Заголовок: {note['title']}")
-        print(f"Описание: {note['content']}")
-        print(f"Статус: {note['status']}\n")
-else:
-    print("Заметки, соответствующие запросу, не найдены.")
+if __name__ == "__main__":
+    keyword = input("Введите ключевое слово для поиска: ")
+    found_notes = search_notes(notes, keyword=keyword)
+    if found_notes:
+        print("Найдены заметки:")
+        for i, note in enumerate(found_notes, start=1):
+            print(f"Заметка №{i}:")
+            print(f"Имя пользователя: {note['username']}")
+            print(f"Заголовок: {note['title']}")
+            print(f"Описание: {note['content']}")
+            print(f"Статус: {note['status']}\n")
+    else:
+        print("Заметки, соответствующие запросу, не найдены.")
 
-# # Ввод и поиск по статусу
-status = input("Введите статус для поиска: ")
-found_notes = search_notes(notes, status=status)
-if found_notes:
-    print("Найдены заметки:")
-    for i, note in enumerate(found_notes, start=1):
-        print(f"Заметка №{i}:")
-        print(f"Имя пользователя: {note['username']}")
-        print(f"Заголовок: {note['title']}")
-        print(f"Описание: {note['content']}")
-        print(f"Статус: {note['status']}\n")
-else:
-    print("Заметки, соответствующие запросу, не найдены.")
+    # # Ввод и поиск по статусу
+    status = input("Введите статус для поиска: ")
+    found_notes = search_notes(notes, status=status)
+    if found_notes:
+        print("Найдены заметки:")
+        for i, note in enumerate(found_notes, start=1):
+            print(f"Заметка №{i}:")
+            print(f"Имя пользователя: {note['username']}")
+            print(f"Заголовок: {note['title']}")
+            print(f"Описание: {note['content']}")
+            print(f"Статус: {note['status']}\n")
+    else:
+        print("Заметки, соответствующие запросу, не найдены.")
 
-# # Ввод и поиск по ключевому слову и статусу
-keyword = input("Введите ключевое слово для поиска: ")
-status = input("Введите статус для поиска: ")
-found_notes = search_notes(notes, keyword=keyword, status=status)
-if found_notes:
-    print("Найдены заметки:")
-    for i, note in enumerate(found_notes, start=1):
-        print(f"Заметка №{i}:")
-        print(f"Имя пользователя: {note['username']}")
-        print(f"Заголовок: {note['title']}")
-        print(f"Описание: {note['content']}")
-        print(f"Статус: {note['status']}\n")  
-else:
-    print("Заметки, соответствующие запросу, не найдены.")
+    # # Ввод и поиск по ключевому слову и статусу
+    keyword = input("Введите ключевое слово для поиска: ")
+    status = input("Введите статус для поиска: ")
+    found_notes = search_notes(notes, keyword=keyword, status=status)
+    if found_notes:
+        print("Найдены заметки:")
+        for i, note in enumerate(found_notes, start=1):
+            print(f"Заметка №{i}:")
+            print(f"Имя пользователя: {note['username']}")
+            print(f"Заголовок: {note['title']}")
+            print(f"Описание: {note['content']}")
+            print(f"Статус: {note['status']}\n")
+    else:
+        print("Заметки, соответствующие запросу, не найдены.")
