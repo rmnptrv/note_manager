@@ -25,7 +25,7 @@ def update_note(note):
         # Если в качестве критерия выбрана дата дедлайна, то запускаем блок на проверку ошибок и ввода правильного формата
         if criteria_to_update == "issue_date":
             try:
-                datetime.strptime(new_value, "%d-%m-%Y")
+                datetime.strptime(new_value, "%d.%m.%Y")
             # Если формат введен не правильно, то надпись с просьбой вести правильный формат
             except ValueError:
                     print("Неверный формат даты! Пожалуйста, введи правильный формат даты, например 25.12.2024!")
@@ -38,14 +38,17 @@ def update_note(note):
         return note
 
 # Присваем словарю начальные данные ключ-значение
-note = {
-    'username': 'Роман',
-    'title': 'Список покупок',
-    'content': 'Купить продукты на неделю',
-    'status': 'новая',
-    'created_date': '27-11-2024',
-    'issue_date': '30-11-2024'
-}
+if __name__ == "__main__":
+    note = {
+        'username': 'Роман',
+        'title': 'Список покупок',
+        'content': 'Купить продукты на неделю',
+        'status': 'новая',
+        'created_date': '27.11.2024',
+        'issue_date': '30.11.2024'
+    }
 
-# Запускаем функцию
-update_note(note)
+    if __name__ == "__main__":
+        updated_note = update_note(note)
+        print("\nОбновлённая заметка:")
+        print(updated_note)
