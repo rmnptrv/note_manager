@@ -47,11 +47,12 @@ def display_notes(notes):
 #         'created_date': '20.11.2024',
 #         'issue_date': '15.12.2024'
 #     }
-# ]
+# ] if __name__ == "__main__" else []
 
 # Проверяем определен ли список локально, если определенно, то выводится весь список со словарями внутри
 # Если список не определен и не найден, то присваивается постой список
 notes = notes if 'notes' in locals() else []
 
 # Запускаем функцию
-display_notes(notes)
+if __name__ == "__main__":
+    display_notes(notes)
